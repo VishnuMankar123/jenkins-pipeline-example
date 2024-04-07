@@ -12,6 +12,22 @@ pipeline {
               echo "java Test"
             }
         }
+    }
+    post {
 
+    always  {
+        echo "post command execution"
+        }
+    failure {
+                script {
+                    echo "failure command execution"
+                }
+            }
+        }
+    success{
+            script {
+                echo "Success command execution"
+            }
+        }
     }
 }
