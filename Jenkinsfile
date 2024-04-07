@@ -4,27 +4,26 @@ pipeline {
     stages {
         stage('compile') {
             steps {
-             echo "javac Test.java"
+                echo "javac Test.java"
             }
         }
         stage('run') {
             steps {
-              echo "java Test"
+                echo "java Test"
             }
         }
     }
-    post {
 
-    always  {
-        echo "post command execution"
+    post {
+        always {
+            echo "post command execution"
         }
-    failure {
-                script {
-                    echo "failure command execution"
-                }
+        failure {
+            script {
+                echo "failure command execution"
             }
         }
-    success{
+        success {
             script {
                 echo "Success command execution"
             }
